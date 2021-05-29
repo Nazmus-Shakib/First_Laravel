@@ -58,3 +58,23 @@ Route::prefix('sliders')->group(function (){
     Route::post('/update/{id}', 'Backend\SliderController@update')->name('sliders.update');
     Route::get('/delete/{id}', 'Backend\SliderController@delete')->name('sliders.delete');
 });
+
+// route group for mission section management
+Route::prefix('missions')->group(function (){
+    Route::get('/view', 'Backend\MissionController@view')->name('missions.view');
+    Route::get('/add', 'Backend\MissionController@add')->name('missions.add');
+    Route::post('/store', 'Backend\MissionController@store')->name('missions.store');
+    Route::get('/edit/{id}', 'Backend\MissionController@edit')->name('missions.edit');
+    Route::post('/update/{id}', 'Backend\MissionController@update')->name('missions.update');
+    Route::get('/delete/{id}', 'Backend\MissionController@delete')->name('missions.delete');
+});
+
+// route group for News & Events section management
+Route::prefix('news_events')->group(function (){
+    Route::get('/view', 'Backend\NewsEventController@view')->name('news_events.view');
+    Route::get('/add', 'Backend\NewsEventController@add')->name('news_events.add');
+    Route::post('/store', 'Backend\NewsEventController@store')->name('news_events.store');
+    Route::get('/edit/{id}', 'Backend\NewsEventController@edit')->name('news_events.edit');
+    Route::post('/update/{id}', 'Backend\NewsEventController@update')->name('news_events.update');
+    Route::get('/delete/{id}', 'Backend\NewsEventController@delete')->name('news_events.delete');
+});

@@ -53,8 +53,8 @@ class LogoController extends Controller
 
     public function delete($id){
         $logo = Logo::find($id);
-        if(file_exists('public/upload/logo_images'.$logo->image) AND !empty($logo->image)){
-            unlink('public/upload/logo_images'.$logo->image);
+        if(file_exists('public/upload/logo_images/'.$logo->image) AND !empty($logo->image)){
+            unlink('public/upload/logo_images/'.$logo->image);
         }
         $logo->delete();
         return redirect()->route('logos.view')->with('success','Logo Deleted Successfully');
