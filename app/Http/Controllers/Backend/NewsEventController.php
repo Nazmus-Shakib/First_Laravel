@@ -10,7 +10,6 @@ use App\Model\NewsEvent;
 class NewsEventController extends Controller
 {
     public function view(){
-        // $data['countMission'] = Mission::count();
         $data['allData'] = NewsEvent::all();
         return view('backend.news_event.view-newsEvent', $data);
     }
