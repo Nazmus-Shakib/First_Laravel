@@ -14,6 +14,7 @@
 Route::get('/', 'Frontend\FrontendController@index');
 Route::get('/about-us', 'Frontend\FrontendController@aboutUs')->name('about.us');
 Route::get('/contact-us', 'Frontend\FrontendController@contactUs')->name('contact.us');
+Route::get('/news-events/details/{id}', 'Frontend\FrontendController@newsDetails')->name('news.event.details');
 
 Auth::routes();
 
@@ -24,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware'=>'auth'], function(){
     // route group for user management
     Route::prefix('users')->group(function (){
-        Route::get('/view', 'Backend\UserController@view')->name('users.view')->middleware('test');
+        Route::get('/view', 'Backend\UserController@view')->name('users.view');
         Route::get('/add', 'Backend\UserController@add')->name('users.add');
         Route::post('/store', 'Backend\UserController@store')->name('users.store');
         Route::get('/edit/{id}', 'Backend\UserController@edit')->name('users.edit');

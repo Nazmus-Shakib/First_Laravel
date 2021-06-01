@@ -2,7 +2,7 @@
 	<section class="header">
 		<div class="container">
 			<nav class="navbar navbar-expand-md navbar-light">
-				<a href="{{ url('')}}" class="navbar-brand"><img src="{{asset('public/frontend/image/logo.png')}}" style="height: 50px;"></a>
+				<a href="{{ url('')}}" class="navbar-brand"><img src="{{asset('public/upload/logo_images/'.$logo->image)}}" style="height: 50px;"></a>
 				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
 				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 					<div class="navbar-nav popular">
