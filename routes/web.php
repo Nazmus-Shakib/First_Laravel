@@ -15,6 +15,9 @@ Route::get('/', 'Frontend\FrontendController@index');
 Route::get('/about-us', 'Frontend\FrontendController@aboutUs')->name('about.us');
 Route::get('/contact-us', 'Frontend\FrontendController@contactUs')->name('contact.us');
 Route::get('/news-events/details/{id}', 'Frontend\FrontendController@newsDetails')->name('news.event.details');
+Route::get('/our/mission', 'Frontend\FrontendController@mission')->name('our.mission');
+Route::get('/our/news-events', 'Frontend\FrontendController@newsEvent')->name('our.news.events');
+Route::post('/contact/store', 'Frontend\FrontendController@store')->name('contact.store');
 
 Auth::routes();
 
@@ -100,6 +103,8 @@ Route::group(['middleware'=>'auth'], function(){
         Route::get('/edit/{id}', 'Backend\ContactController@edit')->name('contacts.edit');
         Route::post('/update/{id}', 'Backend\ContactController@update')->name('contacts.update');
         Route::get('/delete/{id}', 'Backend\ContactController@delete')->name('contacts.delete');
+        Route::get('/communicate', 'Backend\ContactController@viewCommunicate')->name('communicate.view');
+        Route::get('/communicate/delete/{id}', 'Backend\ContactController@deleteCommunicate')->name('communicate.delete');
     });
 
     // route group for about-us section management

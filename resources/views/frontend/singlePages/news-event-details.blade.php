@@ -17,7 +17,9 @@
 
 			<div class="row">
 				<div class="col-md-12 m-2">
-					<img src="{{url('public/upload/news_images/'.$news->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
+					<img src="{{url('public/upload/news_images/'.$news->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 15px;">
+					<p>Date: {{date('d-m-Y', strtotime($news->date))}}</p>
+					<h4>Title: <b>{{$news->short_title}}</b></h4>
 					<p style="text-align: justify;"> {{$news->long_title}} </p>
 				</div>
 			</div>

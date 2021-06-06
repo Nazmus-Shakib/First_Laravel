@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Model\Contact;
+use App\Model\Communicate;
 
 class ContactController extends Controller
 {
@@ -50,5 +51,16 @@ class ContactController extends Controller
         $service = Service::find($id);
         $service->delete();
         return redirect()->route('services.view')->with('success','Service Deleted Successfully');
+    }
+
+    public function viewCommunicate(){
+        $allData = Communicate::orderBy('id', 'desc')->get();
+        return view('backend.contact.view-communicate', compact('allData'));
+    }
+
+    public function deleteCommunicate($id){
+        $communicate = Communicate::find($id);
+        $communicate->delete();
+        return redirect()->route('communicate.view')->with('success','Communicate Deleted Successfully');
     }
 }
