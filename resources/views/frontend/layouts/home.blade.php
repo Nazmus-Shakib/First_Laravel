@@ -12,8 +12,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<img src="{{url('public/upload/mission_images/'. $mission->image)}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
-					<p style="text-align: justify;"><strong>Mission</strong> {{$mission->title}} </p>
+					<img src="{{$mission?url('public/upload/mission_images/'. $mission->image):''}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
+					<p style="text-align: justify;"><strong>Mission</strong> {{$mission->title ?? ''}} </p>
 				</div>
 				<div class="col-md-6">
 					<img src="{{url('public/frontend/image/vision.jpg')}}" style="border: 1px solid #ddd;padding: 5px;background: #EFEE03;border-radius: 30px;float: left;margin-right: 10px;">
@@ -30,7 +30,7 @@
 				<div class="col-md-3" style="padding-top: 15px;">
 					<h3 style="border-bottom: 1px solid #000;width: 90%">News and Events</h3>
 				</div>
-				<div class="col-md-9" style="padding-top: 15px;">					
+				<div class="col-md-9" style="padding-top: 15px;">
 					<table class="table table-striped table-bordered table-hover table-md table-warning">
 						<thead class="thead-dark">
 							<tr>
